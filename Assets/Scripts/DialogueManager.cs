@@ -41,11 +41,14 @@ public class DialogueNode
 
     public List<DialogueRequirement> requirements = new List<DialogueRequirement>();
     public List<DialogueResult> results = new List<DialogueResult>();
+
+    public bool isDetective = true;
 }
 
 public class DialogueManager : MonoBehaviour
 {
     public Image MCImage;
+    public Sprite DetectiveSprite;
     public Image characterImage;
     public Image dialogueBG;
     public TextMeshProUGUI speakerNameText;
@@ -116,10 +119,22 @@ public class DialogueManager : MonoBehaviour
         {
             ShowDialoguePanel();
 
-            MCImage.sprite = node.MCSprite;
+            if (!node.isDetective)
+            {
+                MCImage.sprite = node.MCSprite;
+            }
+            else
+            {
+                MCImage.sprite = DetectiveSprite;
+            }
             characterImage.sprite = node.characterSprite;
             speakerNameText.text = node.speakerName;
             dialogueBG.sprite = node.dialogueBG;
+
+            if (speakerNameText.text == "MC")
+            {
+                speakerNameText.text = "Detective";
+            }
 
             StopAllCoroutines();
             StartCoroutine(TypeSentence(node.dialogueText, node.typingSound, node.soundInterval));

@@ -3025,6 +3025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MCImage: {fileID: 495085189}
+  DetectiveSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
   characterImage: {fileID: 597460469}
   dialogueBG: {fileID: 458268831}
   speakerNameText: {fileID: 225606731}
@@ -3051,6 +3052,7 @@ MonoBehaviour:
     - requirement: Lunch
       nextNodeIndex: 3
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3064,6 +3066,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3076,38 +3079,25 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
     dialogueText: Oh. Back so soon?
     choices: []
-    nextNode: 03000000
-    isFinalNode: 0
-    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
-    soundInterval: 4
-    requirements:
-    - requirement: 
-      nextNodeIndex: 0
-    results: []
-  - speakerName: Mayor
-    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: 'Ha! Well, detective, what brings you to our humble town? '
-    choices: []
     nextNode: 04000000
     isFinalNode: 0
     typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
-    soundInterval: 5
+    soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
-    characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "I was born here, actually. At least, that\u2019s what I\u2019m
-      told. It\u2019s not on my birth certificate."
+    dialogueText: "Here\u2019s your lunch."
     choices: []
     nextNode: 05000000
     isFinalNode: 0
@@ -3115,48 +3105,53 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
-  - speakerName: Mayor
-    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    isDetective: 1
+  - speakerName: MC
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "A returning local? How wonderful! I\u2019m afraid I don\u2019t
-      recognize you, though. Do I know someone in your family?"
+    dialogueText: (LOSE LUNCH)
     choices: []
     nextNode: 06000000
+    isFinalNode: 0
+    typingSound: {fileID: 0}
+    soundInterval: 4
+    requirements: []
+    results:
+    - result: Lunch
+      isMet: 0
+    isDetective: 1
+  - speakerName: Mayor
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
+    dialogueText: 'Oh, marvelous! Thank you so much. '
+    choices: []
+    nextNode: 07000000
     isFinalNode: 0
     typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
     soundInterval: 5
     requirements: []
     results: []
-  - speakerName: MC
+    isDetective: 1
+  - speakerName: Detective
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "Does the name \u201CGregory Aarfman\u201D ring a bell?"
+    dialogueText: "So\u2026 about Aarfman."
     choices: []
-    nextNode: 07000000
+    nextNode: 08000000
     isFinalNode: 0
     typingSound: {fileID: 8300000, guid: 013189e6296d492419978a64d2140243, type: 3}
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "\u2026"
-    choices: []
-    nextNode: 08000000
-    isFinalNode: 0
-    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
-    soundInterval: 5
-    requirements: []
-    results: []
-  - speakerName: Mayor
-    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "I\u2019m not sure. Does it?"
+    dialogueText: "\u2026 You\u2019re still on about that?"
     choices: []
     nextNode: 09000000
     isFinalNode: 0
@@ -3164,13 +3159,12 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
-  - speakerName: MC
-    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
-    characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    isDetective: 1
+  - speakerName: Detective
+    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "I was hoping that it would. He\u2019s been missing since before
-      I can remember, and I came here looking for clues as to his whereabouts. Our
-      old house was somewhere in the woods, wasn\u2019t it? "
+    dialogueText: "It\u2019s why I\u2019m here. Is there a problem?"
     choices: []
     nextNode: 0a000000
     isFinalNode: 0
@@ -3178,7 +3172,22 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
+    dialogueText: "No, of course not. It\u2019s just\u2026 Well. I\u2019m not even
+      sure such a man existed"
+    choices: []
+    nextNode: 0b000000
+    isFinalNode: 0
+    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
+    soundInterval: 5
+    requirements: []
+    results: []
+    isDetective: 1
+  - speakerName: Detective
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
@@ -3191,6 +3200,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3204,6 +3214,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3216,6 +3227,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3228,6 +3240,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3242,6 +3255,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3255,6 +3269,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3267,6 +3282,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3279,6 +3295,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3292,6 +3309,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3306,6 +3324,7 @@ MonoBehaviour:
     results:
     - result: Cash
       isMet: 1
+    isDetective: 1
   fadeOverlay: {fileID: 2012909527}
   fadeDuration: 1
   audioSource: {fileID: 1334456791}
@@ -4508,6 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MCImage: {fileID: 495085189}
+  DetectiveSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
   characterImage: {fileID: 597460469}
   dialogueBG: {fileID: 458268831}
   speakerNameText: {fileID: 225606731}
@@ -4532,6 +4552,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4544,6 +4565,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4562,6 +4584,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -4574,6 +4597,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -4586,6 +4610,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4599,6 +4624,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4611,6 +4637,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4623,6 +4650,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4639,6 +4667,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4651,6 +4680,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4663,6 +4693,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4675,6 +4706,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4687,6 +4719,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4700,6 +4733,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4712,6 +4746,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4725,6 +4760,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4737,6 +4773,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4749,6 +4786,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4761,6 +4799,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4775,6 +4814,7 @@ MonoBehaviour:
     results:
     - result: Fish
       isMet: 1
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -4787,6 +4827,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Fisherman
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: 267571615, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4799,6 +4840,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4811,6 +4853,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -4824,6 +4867,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   fadeOverlay: {fileID: 2012909527}
   fadeDuration: 1
   audioSource: {fileID: 1905018589}
@@ -5162,6 +5206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MCImage: {fileID: 495085189}
+  DetectiveSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
   characterImage: {fileID: 597460469}
   dialogueBG: {fileID: 458268831}
   speakerNameText: {fileID: 225606731}
@@ -5186,6 +5231,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5198,6 +5244,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5210,6 +5257,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5222,6 +5270,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5235,6 +5284,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5248,6 +5298,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5260,6 +5311,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5272,6 +5324,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5284,6 +5337,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5298,6 +5352,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5311,6 +5366,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5324,6 +5380,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5336,6 +5393,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5348,6 +5406,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5362,6 +5421,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5375,6 +5435,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5387,6 +5448,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5399,6 +5461,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5412,6 +5475,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5426,6 +5490,7 @@ MonoBehaviour:
     results:
     - result: Cash
       isMet: 1
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -5438,6 +5503,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5451,6 +5517,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5464,6 +5531,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5477,6 +5545,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5495,6 +5564,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5508,6 +5578,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5520,6 +5591,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5533,6 +5605,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5545,6 +5618,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5557,6 +5631,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5570,6 +5645,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5582,6 +5658,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5594,6 +5671,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5607,6 +5685,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5619,6 +5698,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5633,6 +5713,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5651,6 +5732,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5663,6 +5745,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5677,6 +5760,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5689,6 +5773,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5702,6 +5787,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5714,6 +5800,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5726,6 +5813,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5738,6 +5826,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5751,6 +5840,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5765,6 +5855,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5777,6 +5868,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5789,6 +5881,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5801,6 +5894,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5816,6 +5910,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5828,6 +5923,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5840,6 +5936,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5853,6 +5950,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5867,6 +5965,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5879,6 +5978,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5891,6 +5991,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5903,6 +6004,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5918,6 +6020,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5930,6 +6033,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5942,6 +6046,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5958,6 +6063,7 @@ MonoBehaviour:
     - requirement: Fish
       nextNodeIndex: 68
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5970,6 +6076,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5983,6 +6090,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -5995,6 +6103,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6007,6 +6116,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6020,6 +6130,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6032,6 +6143,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -6044,6 +6156,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6056,6 +6169,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -6068,6 +6182,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6080,6 +6195,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6092,6 +6208,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6104,6 +6221,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6116,6 +6234,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6134,6 +6253,7 @@ MonoBehaviour:
       isMet: 0
     - result: Fish
       isMet: 0
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6146,6 +6266,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: Chef
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6158,6 +6279,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -1370160963, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6170,6 +6292,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: 
     MCSprite: {fileID: 0}
     characterSprite: {fileID: 0}
@@ -6182,6 +6305,7 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+    isDetective: 1
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6200,6 +6324,7 @@ MonoBehaviour:
     - requirement: Fish
       nextNodeIndex: 60
     results: []
+    isDetective: 1
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -6212,6 +6337,7 @@ MonoBehaviour:
     soundInterval: 5
     requirements: []
     results: []
+    isDetective: 1
   fadeOverlay: {fileID: 2012909527}
   fadeDuration: 1
   audioSource: {fileID: 1979688439}
