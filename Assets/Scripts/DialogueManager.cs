@@ -43,13 +43,17 @@ public class DialogueNode
     public List<DialogueResult> results = new List<DialogueResult>();
 
     public bool isDetective = true;
+    public int talkingCharacterIndex;
 }
 
 public class DialogueManager : MonoBehaviour
 {
     public Image MCImage;
-    public Sprite DetectiveSprite;
+    public Sprite detectiveSprite;
     public Image characterImage;
+    public Sprite mayorSprite;
+    public Sprite chefSprite;
+    public Sprite fishermanSprite;
     public Image dialogueBG;
     public TextMeshProUGUI speakerNameText;
     public TextMeshProUGUI dialogueText; // Use Text if not using TextMeshPro
@@ -90,7 +94,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (waitingForUserInput && Input.GetMouseButtonDown(0))
+        if (waitingForUserInput && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
         {
             waitingForUserInput = false;
             ShowDialogue(nextNodeIndex);
@@ -127,7 +131,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                MCImage.sprite = DetectiveSprite;
+                MCImage.sprite = detectiveSprite;
             }
             characterImage.sprite = node.characterSprite;
             speakerNameText.text = node.speakerName;
@@ -136,6 +140,16 @@ public class DialogueManager : MonoBehaviour
             if (speakerNameText.text == "MC")
             {
                 speakerNameText.text = "Detective";
+            }
+
+            if (node.talkingCharacterIndex != 0)
+            {
+                if (node.talkingCharacterIndex == 1)
+                    characterImage.sprite = mayorSprite;
+                else if (node.talkingCharacterIndex == 2)
+                    characterImage.sprite = chefSprite;
+                else if (node.talkingCharacterIndex == 3)
+                    characterImage.sprite = fishermanSprite;
             }
 
             StopAllCoroutines();
