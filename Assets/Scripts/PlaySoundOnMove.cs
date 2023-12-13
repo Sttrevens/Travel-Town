@@ -31,6 +31,8 @@ public class PlaySoundOnMove : MonoBehaviour
         // Check if the GameObject has moved
         if (Vector3.Distance(transform.position, lastPosition) > movementThreshold)
         {
+            isMoving = true;
+
             if (isMoving && !audioSource.isPlaying)
             {
                 audioSource.Play(); // Play sound
@@ -47,6 +49,11 @@ public class PlaySoundOnMove : MonoBehaviour
             {
                 transform.localScale = new Vector3(-1, 1, 1); // Facing left
             }
+        }
+        else
+        {
+            isMoving = false;
+            animator.SetBool("IsWalking", isMoving); // Play "PlayerWalk" animation when moving
         }
 
         lastPosition = transform.position; // Update last position for the next frame

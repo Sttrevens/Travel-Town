@@ -296,6 +296,9 @@ public class DialogueManager : MonoBehaviour
 
     public void GotoNextNode()
     {
+        if(nextNodeIndex_! != 0)
+        {
         ShowDialogue(nextNodeIndex_);
+        }
     }
 }
