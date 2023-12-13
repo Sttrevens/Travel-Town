@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static RequirementsData;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour
     public RequirementsData requirementsData;
 
     public DialogueManager dialogueManager;
+
+    public bool dialogueTriggered = false;
+
+    public GameObject endGameImage;
+    public Image fadeOverlay;
 
     void Awake()
     {
@@ -41,6 +47,11 @@ public class GameManager : MonoBehaviour
         {
             UpdateRequirementStatus("Cash and fish", false);
         }
+
+        if (requirementsData.CheckRequirement("End") )
+        {
+            StartCoroutine(EndGameWithFade());
+        }
     }
 
     public void UpdateRequirementStatus(string requirementName, bool status)
@@ -53,6 +64,43 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Requirement not found: " + requirementName);
+        }
+    }
+
+    IEnumerator EndGameWithFade()
+    {
+        // Fade in
+        yield return StartCoroutine(FadeIn(fadeOverlay, 3.0f));
+
+        endGameImage.SetActive(true);
+
+        // Fade out
+        yield return StartCoroutine(FadeOut(fadeOverlay, 2.0f));
+    }
+
+    IEnumerator FadeIn(Image image, float duration)
+    {
+        float elapsedTime = 0;
+        Color color = image.color;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / duration);
+            image.color = color;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut(Image image, float duration)
+    {
+        float elapsedTime = 0;
+        Color color = image.color;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(1 - (elapsedTime / duration));
+            image.color = color;
+            yield return null;
         }
     }
 }

@@ -16,6 +16,8 @@ public class NPC : MonoBehaviour
     public float movementThreshold = 0f;
     private Vector3 lastPosition;
 
+    public GameManager gameManager;
+
     private void Start()
     {
         lastPosition = player.position;
@@ -24,15 +26,32 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, lastPosition) <= movementThreshold)
+        dialogueTriggered = gameManager.dialogueTriggered;
+        //Debug.Log(dialogueTriggered);
+        if (Vector3.Distance(player.position, lastPosition) <= movementThreshold)
         {
             if (!dialogueTriggered && Vector3.Distance(player.position, transform.position) <= activationDistance)
             {
                 StartCoroutine(StartDialogueWithFade());
             }
         }
+        else
+            {
+                StartCoroutine(ReSetTrigger());
+            }
 
-        lastPosition = transform.position;
+        lastPosition = player.position;
+    }
+
+    IEnumerator ReSetTrigger()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < 0.5f)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        gameManager.dialogueTriggered = false;
     }
 
     IEnumerator StartDialogueWithFade()
@@ -42,7 +61,7 @@ public class NPC : MonoBehaviour
 
         // Show dialogue
         dialogueManager.ShowDialogue(dialogueIndex);
-        dialogueTriggered = true;
+        gameManager.dialogueTriggered = true;
 
         // Fade out
         yield return StartCoroutine(FadeOut(fadeOverlay, fadeDuration));

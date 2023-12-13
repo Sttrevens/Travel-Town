@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject sandwichObject;
     public Sprite fishSprite;
     public Sprite lunchSprite;
+    public Sprite keySprite;
     private bool isOpenInventory = false;
 
     public GameManager gameManager;
@@ -47,16 +48,15 @@ public class PlayerController : MonoBehaviour
         {
             sandwichObject.GetComponent<Image>().sprite = lunchSprite;
         }
+        else if (gameManager.requirementsData.CheckRequirement("Key") && isOpenInventory)
+        {
+            sandwichObject.GetComponent<Image>().sprite = keySprite;
+        }
 
         if (gameManager.requirementsData.CheckRequirement("Inventory"))
         {
             inventoryPanel.SetActive(true);
             isOpenInventory = true;
-        }
-        else
-        {
-            inventoryPanel.SetActive(false);
-            isOpenInventory = false;
         }
     }
 

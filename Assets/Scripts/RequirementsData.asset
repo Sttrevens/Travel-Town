@@ -20,8 +20,10 @@ MonoBehaviour:
   - name: Fish
     isMet: 0
   - name: Lunch
-    isMet: 1
+    isMet: 0
   - name: Key
     isMet: 0
   - name: Inventory
+    isMet: 0
+  - name: End
     isMet: 0

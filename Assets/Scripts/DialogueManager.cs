@@ -282,6 +282,7 @@ public class DialogueManager : MonoBehaviour
     void HideDialoguePanel()
     {
         isTalking = false;
+        //gameManager.dialogueTriggered = false;
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
     }
