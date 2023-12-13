@@ -48,6 +48,17 @@ public class PlayerController : MonoBehaviour
         {
             sandwichObject.GetComponent<Image>().sprite = lunchSprite;
         }
+
+        if (gameManager.requirementsData.CheckRequirement("Inventory"))
+        {
+            inventoryPanel.SetActive(true);
+            isOpenInventory = true;
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+            isOpenInventory = false;
+        }
     }
 
     void HandleMovement()

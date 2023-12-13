@@ -76,6 +76,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool isTalking = false;
 
+    private int nextNodeIndex_;
+
     private bool CheckRequirement(string requirement)
     {
         return requirementsData.CheckRequirement(requirement);
@@ -153,6 +155,7 @@ public class DialogueManager : MonoBehaviour
                     }
                     choiceButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
                     choiceButtons[i].GetComponent<Button>().onClick.AddListener(() => ShowDialogue(nextNodeIndex));
+                    nextNodeIndex_ = nextNodeIndex;
                 }
 
                 for (int i = node.choices.Count; i < choiceButtons.Length; i++)
@@ -274,5 +277,10 @@ public class DialogueManager : MonoBehaviour
         isTalking = true;
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
+    }
+
+    public void GotoNextNode()
+    {
+        ShowDialogue(nextNodeIndex_);
     }
 }
