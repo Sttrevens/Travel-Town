@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680432f908dd8404b86da9445e63b3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 1979688437}
+  dialogueManager: {fileID: 1334456792}
   player: {fileID: 1713406337}
   activationDistance: 1
   fadeOverlay: {fileID: 2012909527}
@@ -2910,7 +2910,7 @@ GameObject:
   - component: {fileID: 1334456792}
   - component: {fileID: 1334456791}
   m_Layer: 0
-  m_Name: Mayor2 DialogueManager (1)
+  m_Name: Mayor2 DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3037,41 +3037,58 @@ MonoBehaviour:
   dialoguePanel: {fileID: 319228898}
   typingSpeed: 0.02
   dialogueNodes:
-  - speakerName: Mayor
-    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+  - speakerName: MC
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "\u2026 Hello? Oh, really? Yes, yes, bring them in."
+    dialogueText: ...
     choices: []
     nextNode: 01000000
     isFinalNode: 0
-    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
+    typingSound: {fileID: 8300000, guid: 013189e6296d492419978a64d2140243, type: 3}
     soundInterval: 5
-    requirements: []
-    results: []
-  - speakerName: Mayor
-    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
-    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "Welcome, welcome to Petrichor. How can I help you, er\u2026? "
-    choices: []
-    nextNode: 02000000
-    isFinalNode: 0
-    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
-    soundInterval: 5
-    requirements: []
+    requirements:
+    - requirement: Lunch
+      nextNodeIndex: 3
     results: []
   - speakerName: MC
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: Just call me detective.
+    dialogueText: "\u2026 Guess he\u2019s not here right now. What a pain in the
+      ass\u2026"
     choices: []
-    nextNode: 03000000
+    nextNode: 02000000
     isFinalNode: 0
     typingSound: {fileID: 8300000, guid: 013189e6296d492419978a64d2140243, type: 3}
     soundInterval: 4
     requirements: []
+    results: []
+  - speakerName: 
+    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
+    dialogueText: 
+    choices: []
+    nextNode: 02000000
+    isFinalNode: 1
+    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
+    soundInterval: 5
+    requirements: []
+    results: []
+  - speakerName: Mayor
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
+    dialogueText: Oh. Back so soon?
+    choices: []
+    nextNode: 03000000
+    isFinalNode: 0
+    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
+    soundInterval: 4
+    requirements:
+    - requirement: 
+      nextNodeIndex: 0
     results: []
   - speakerName: Mayor
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
@@ -3294,6 +3311,8 @@ MonoBehaviour:
   audioSource: {fileID: 1334456791}
   gameManager: {fileID: 1422179440}
   requirementsData: {fileID: 11400000, guid: ed48725e08a48410ba53add9dd8b6a82, type: 2}
+  rainPrefab: {fileID: 1663758804}
+  bGM: {fileID: 1509639248}
 --- !u!4 &1334456793
 Transform:
   m_ObjectHideFlags: 0
@@ -3485,9 +3504,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e57d3b5edf811a74ca0b7c38a6c4c3b8, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_audioClip: {fileID: 8300000, guid: 3d4344130a6cb4c5693eca5b996f30fc, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3704,6 +3723,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1663758804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 191326, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+  m_PrefabInstance: {fileID: 292179122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1713406334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,7 +4643,7 @@ MonoBehaviour:
     MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: 2120918edde97f943a3b3cc7b078ba1d, type: 3}
-    dialogueText: Would this work?
+    dialogueText: "\u2026 Here. Do you think this would work?"
     choices: []
     nextNode: 0a000000
     isFinalNode: 0
@@ -4775,11 +4799,38 @@ MonoBehaviour:
     soundInterval: 4
     requirements: []
     results: []
+  - speakerName: MC
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: 2120918edde97f943a3b3cc7b078ba1d, type: 3}
+    dialogueText: "(But that\u2019s my lunch. I bought it before taking the ferry.)"
+    choices: []
+    nextNode: 17000000
+    isFinalNode: 0
+    typingSound: {fileID: 0}
+    soundInterval: 4
+    requirements: []
+    results: []
+  - speakerName: MC
+    MCSprite: {fileID: 1743826682, guid: 605e46ed4ba223a47adb8897e75f06ca, type: 3}
+    characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: 2120918edde97f943a3b3cc7b078ba1d, type: 3}
+    dialogueText: "(... I can go without lunch for one day. God, I\u2019m whining
+      over nothing.)"
+    choices: []
+    nextNode: 09000000
+    isFinalNode: 0
+    typingSound: {fileID: 0}
+    soundInterval: 4
+    requirements: []
+    results: []
   fadeOverlay: {fileID: 2012909527}
   fadeDuration: 1
   audioSource: {fileID: 1905018589}
   gameManager: {fileID: 1422179440}
   requirementsData: {fileID: 11400000, guid: ed48725e08a48410ba53add9dd8b6a82, type: 2}
+  rainPrefab: {fileID: 1663758804}
+  bGM: {fileID: 1509639248}
 --- !u!4 &1905018591
 Transform:
   m_ObjectHideFlags: 0
@@ -4790,6 +4841,57 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 995.0229, y: 461.65952, z: 1.7787904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1911753665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911753667}
+  - component: {fileID: 1911753666}
+  m_Layer: 0
+  m_Name: WoodHouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1911753666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911753665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680432f908dd8404b86da9445e63b3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  player: {fileID: 1713406337}
+  activationDistance: 3
+  fadeOverlay: {fileID: 2012909527}
+  fadeDuration: 1
+  dialogueIndex: 0
+  movementThreshold: 0
+--- !u!4 &1911753667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911753665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.6, y: 1, z: -3.5083785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5076,9 +5178,9 @@ MonoBehaviour:
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "\u2026 Hello? Oh, really? Yes, yes, bring them in."
+    dialogueText: 
     choices: []
-    nextNode: 01000000
+    nextNode: 50000000
     isFinalNode: 0
     typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
     soundInterval: 5
@@ -5277,7 +5379,7 @@ MonoBehaviour:
     MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
-    dialogueText: "Great, great! I\u2019ll see you when you get back."
+    dialogueText: "Great, great! I\u2019ll see you in a bit!"
     choices: []
     nextNode: 11000000
     isFinalNode: 0
@@ -5302,7 +5404,7 @@ MonoBehaviour:
     characterSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
     dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
     dialogueText: "\u2026 He seemed like he was in a hurry to get rid of me. I should
-      get back as soon as I can.  "
+      fetch what he wanted as soon as I can. "
     choices: []
     nextNode: 13000000
     isFinalNode: 0
@@ -6098,11 +6200,25 @@ MonoBehaviour:
     - requirement: Fish
       nextNodeIndex: 60
     results: []
+  - speakerName: Mayor
+    MCSprite: {fileID: -878246928, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    characterSprite: {fileID: -2022944724, guid: 3ab16c544c4934b288ee861cf392a843, type: 3}
+    dialogueBG: {fileID: 21300000, guid: f42ce73fbd8ad40479ce934c6affe076, type: 3}
+    dialogueText: "\u2026 Hello? Oh, really? Yes, yes, bring them in."
+    choices: []
+    nextNode: 01000000
+    isFinalNode: 0
+    typingSound: {fileID: 8300000, guid: 55da74ed1d55aaf49a0d7fde6e30939a, type: 3}
+    soundInterval: 5
+    requirements: []
+    results: []
   fadeOverlay: {fileID: 2012909527}
   fadeDuration: 1
   audioSource: {fileID: 1979688439}
   gameManager: {fileID: 1422179440}
   requirementsData: {fileID: 11400000, guid: ed48725e08a48410ba53add9dd8b6a82, type: 2}
+  rainPrefab: {fileID: 1663758804}
+  bGM: {fileID: 1509639248}
 --- !u!4 &1979688438
 Transform:
   m_ObjectHideFlags: 0
@@ -6759,3 +6875,4 @@ SceneRoots:
   - {fileID: 1171822246}
   - {fileID: 1262607265}
   - {fileID: 1191942057}
+  - {fileID: 1911753667}

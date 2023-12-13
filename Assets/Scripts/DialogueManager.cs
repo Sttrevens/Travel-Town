@@ -68,6 +68,11 @@ public class DialogueManager : MonoBehaviour
 
     public RequirementsData requirementsData;
 
+    public GameObject rainPrefab;
+    public AudioSource bGM;
+
+    private bool isTalking = false;
+
     private bool CheckRequirement(string requirement)
     {
         return requirementsData.CheckRequirement(requirement);
@@ -84,6 +89,16 @@ public class DialogueManager : MonoBehaviour
         {
             waitingForUserInput = false;
             ShowDialogue(nextNodeIndex);
+        }
+
+        if (isTalking)
+        {
+            bGM.volume = Mathf.Clamp(0.5f, 0.0f, 1.0f);
+            rainPrefab.GetComponent<AudioSource>().volume = Mathf.Clamp(0.5f, 0.0f, 1.0f);
+        }
+        else
+        {
+            bGM.volume = Mathf.Clamp(1.0f, 0.0f, 1.0f);
         }
     }
 
@@ -234,12 +249,14 @@ public class DialogueManager : MonoBehaviour
 
     void HideDialoguePanel()
     {
+        isTalking = false;
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
     }
 
     void ShowDialoguePanel()
     {
+        isTalking = true;
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
     }
