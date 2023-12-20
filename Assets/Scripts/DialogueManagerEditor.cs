@@ -1,6 +1,7 @@
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
 
 [CustomEditor(typeof(DialogueManager))]
 public class DialogueManagerEditor : Editor
@@ -46,3 +47,5 @@ public class DialogueManagerEditor : Editor
         }
     }
 }
+
+#endif
